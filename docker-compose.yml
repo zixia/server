@@ -62,7 +62,7 @@ services:
     expose:
       - 80
     volumes:
-      - /opt/data/ceibsmobi.com/admin/UploadFiles/:/var/www/admin/UploadFiles/
+      - /opt/data/ceibsmobi.com/admin/UploadFiles/:/var/www/admin/UploadFiles/:rw
     environment:
       - HTTPS_METHOD=noredirect
       - VIRTUAL_HOST=ceibsmobi.com,www.ceibsmobi.com
