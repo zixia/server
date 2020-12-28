@@ -54,6 +54,7 @@ services:
       - --debug
       - --http-api
       - ceibsmobi
+      - 17salsa
 
   ceibsmobi:
     image: ghcr.io/zixia/ceibsmobi.com
@@ -62,7 +63,7 @@ services:
     expose:
       - 80
     volumes:
-      - /data/ceibsmobi.com/admin/UploadFiles/:/var/www/admin/UploadFiles/:rw
+      - /data/ceibsmobi.com/admin/UploadFiles:/www/admin/UploadFiles
     environment:
       - HTTPS_METHOD=noredirect
       - VIRTUAL_HOST=ceibsmobi.com,www.ceibsmobi.com
@@ -77,9 +78,19 @@ services:
     expose:
       - 80
     volumes:
-      - /data/17salsa.com/home/data:/www/home/data
-      - /data/17salsa.com/home/attachment:/www/home/attachment
+      - /data/17salsa.com/dl:/www/dl
       - /data/17salsa.com/center/data:/www/center/data
+      - /data/17salsa.com/home/attachment:/www/home/attachment
+      - /data/17salsa.com/home/data:/www/home/data
+      - /data/17salsa.com/site/attachments:/www/site/attachments
+      - /data/17salsa.com/site/data:/www/site/data
+      - /data/17salsa.com/shop/data:/www/shop/data
+      - /data/17salsa.com/shop/images:/www/shop/images
+      - /data/17salsa.com/shop/temp:/www/shop/temp
+      - /data/17salsa.com/wiki/data:/www/wiki/data
+      - /data/17salsa.com/wiki/uploads:/www/wiki/uploads
+      - /data/17salsa.com/mall/data:/www/mall/data
+      - /data/17salsa.com/mall/temp:/www/mall/temp
     environment:
       - HTTPS_METHOD=noredirect
       - VIRTUAL_HOST=17salsa.com,*.17salsa.com,17salsa.net,*.17salsa.net,17salsa.org,*.17salsa.org
