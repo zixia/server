@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+
+  17mma:
+    image: bylexus/apache-php56
+    container_name: dme73
+    network_mode: bridge
+    expose:
+      - 80
+    volumes:
+      - /data/dme73.zixia.net:/var/www
+    environment:
+      - HTTPS_METHOD=noredirect
+      - VIRTUAL_HOST=dme73.zixia.net
+      - LETSENCRYPT_HOST=dme73.zixia.net

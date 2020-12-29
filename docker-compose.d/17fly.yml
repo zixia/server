@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+
+  17fly:
+    image: ghcr.io/zixia/17fly.com
+    container_name: 17fly
+    network_mode: bridge
+    expose:
+      - 80
+    volumes:
+      - /data/17fly.com/center/data:/webroot/center/data
+      - /data/17fly.com/home/attachment:/webroot/home/attachment
+      - /data/17fly.com/home/data:/webroot/home/data
+      - /data/17fly.com/bbs/attachments:/webroot/bbs/attachments
+      - /data/17fly.com/bbs/forumdata:/webroot/bbs/forumdata
+    environment:
+      - HTTPS_METHOD=noredirect
+      - VIRTUAL_HOST=17fly.zixia.net
+      - LETSENCRYPT_HOST=17fly.zixia.net
+    env_file:
+      - ../.env

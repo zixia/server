@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+
+  17paoku:
+    image: ghcr.io/zixia/17paoku.com
+    container_name: 17paoku
+    network_mode: bridge
+    expose:
+      - 80
+    volumes:
+      - /data/17paoku.com/center/data:/webroot/center/data
+      - /data/17paoku.com/home/attachment:/webroot/home/attachment
+      - /data/17paoku.com/home/data:/webroot/home/data
+      - /data/17paoku.com/bbs/attachments:/webroot/bbs/attachments
+      - /data/17paoku.com/bbs/forumdata:/webroot/bbs/forumdata
+    environment:
+      - HTTPS_METHOD=noredirect
+      - VIRTUAL_HOST=17paoku.zixia.net
+      - LETSENCRYPT_HOST=17paoku.zixia.net
+    env_file:
+      - ../.env
