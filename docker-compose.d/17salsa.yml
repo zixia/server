@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+
+  17salsa:
+    image: ghcr.io/zixia/17salsa.com
+    container_name: 17salsa
+    network_mode: bridge
+    expose:
+      - 80
+    volumes:
+      - /data/17salsa.com/dl:/webroot/dl
+      - /data/17salsa.com/center/data:/webroot/center/data
+      - /data/17salsa.com/home/attachment:/webroot/home/attachment
+      - /data/17salsa.com/home/data:/webroot/home/data
+      - /data/17salsa.com/site/attachments:/webroot/site/attachments
+      - /data/17salsa.com/site/data:/webroot/site/data
+      - /data/17salsa.com/shop/data:/webroot/shop/data
+      - /data/17salsa.com/shop/images:/webroot/shop/images
+      - /data/17salsa.com/shop/temp:/webroot/shop/temp
+      - /data/17salsa.com/wiki/data:/webroot/wiki/data
+      - /data/17salsa.com/wiki/uploads:/webroot/wiki/uploads
+      - /data/17salsa.com/mall/data:/webroot/mall/data
+      - /data/17salsa.com/mall/temp:/webroot/mall/temp
+    environment:
+      - HTTPS_METHOD=noredirect
+      - VIRTUAL_HOST=17salsa.com,*.17salsa.com,17salsa.net,*.17salsa.net,17salsa.org,*.17salsa.org
+      - LETSENCRYPT_HOST=17salsa.com,www.17salsa.com,cdn.17salsa.com,abu.17salsa.com,17salsa.net,www.17salsa.net,17salsa.org,www.17salsa.org
+    env_file:
+      - ../.env
