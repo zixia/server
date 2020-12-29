@@ -58,48 +58,6 @@ services:
     #   - ceibsmobi
     #   - 17salsa
 
-  ceibsmobi:
-    image: ghcr.io/zixia/ceibsmobi.com
-    container_name: ceibsmobi
-    network_mode: bridge
-    expose:
-      - 80
-    volumes:
-      - /data/ceibsmobi.com/admin/UploadFiles:/www/admin/UploadFiles
-    environment:
-      - HTTPS_METHOD=noredirect
-      - VIRTUAL_HOST=ceibsmobi.com,www.ceibsmobi.com
-      - LETSENCRYPT_HOST=ceibsmobi.com,www.ceibsmobi.com
-    env_file:
-      - .env
-
-  17salsa:
-    image: ghcr.io/zixia/17salsa.com
-    container_name: 17salsa
-    network_mode: bridge
-    expose:
-      - 80
-    volumes:
-      - /data/17salsa.com/dl:/www/dl
-      - /data/17salsa.com/center/data:/www/center/data
-      - /data/17salsa.com/home/attachment:/www/home/attachment
-      - /data/17salsa.com/home/data:/www/home/data
-      - /data/17salsa.com/site/attachments:/www/site/attachments
-      - /data/17salsa.com/site/data:/www/site/data
-      - /data/17salsa.com/shop/data:/www/shop/data
-      - /data/17salsa.com/shop/images:/www/shop/images
-      - /data/17salsa.com/shop/temp:/www/shop/temp
-      - /data/17salsa.com/wiki/data:/www/wiki/data
-      - /data/17salsa.com/wiki/uploads:/www/wiki/uploads
-      - /data/17salsa.com/mall/data:/www/mall/data
-      - /data/17salsa.com/mall/temp:/www/mall/temp
-    environment:
-      - HTTPS_METHOD=noredirect
-      - VIRTUAL_HOST=17salsa.com,*.17salsa.com,17salsa.net,*.17salsa.net,17salsa.org,*.17salsa.org
-      - LETSENCRYPT_HOST=17salsa.com,www.17salsa.com,cdn.17salsa.com,abu.17salsa.com,17salsa.net,www.17salsa.net,17salsa.org,www.17salsa.org
-    env_file:
-      - .env
-
 volumes:
   conf:
   vhost:
