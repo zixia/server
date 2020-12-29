@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+
+  ceibsmobi:
+    image: ghcr.io/zixia/ceibsmobi.com
+    container_name: ceibsmobi
+    network_mode: bridge
+    expose:
+      - 80
+    volumes:
+      - /data/ceibsmobi.com/admin/UploadFiles:/webroot/admin/UploadFiles
+    environment:
+      - HTTPS_METHOD=noredirect
+      - VIRTUAL_HOST=ceibsmobi.com,www.ceibsmobi.com
+      - LETSENCRYPT_HOST=ceibsmobi.com,www.ceibsmobi.com
+      - PHP_ERROR_REPORTING=~E_ALL
+    env_file:
+      - ../.env
