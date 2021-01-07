@@ -8,11 +8,11 @@ services:
     expose:
       - 80
     volumes:
-      - /data/17fly.com/center/data:/webroot/center/data
-      - /data/17fly.com/home/attachment:/webroot/home/attachment
-      - /data/17fly.com/home/data:/webroot/home/data
-      - /data/17fly.com/bbs/attachments:/webroot/bbs/attachments
-      - /data/17fly.com/bbs/forumdata:/webroot/bbs/forumdata
+      - /data/17fly.com/center/data:/var/www/center/data
+      - /data/17fly.com/home/attachment:/var/www/home/attachment
+      - /data/17fly.com/home/data:/var/www/home/data
+      - /data/17fly.com/bbs/attachments:/var/www/bbs/attachments
+      - /data/17fly.com/bbs/forumdata:/var/www/bbs/forumdata
     environment:
       - HTTPS_METHOD=noredirect
       - VIRTUAL_HOST=17fly.zixia.net
@@ -27,11 +27,11 @@ services:
     expose:
       - 80
     volumes:
-      - /data/17mma.com/center/data:/webroot/center/data
-      - /data/17mma.com/home/attachment:/webroot/home/attachment
-      - /data/17mma.com/home/data:/webroot/home/data
-      - /data/17mma.com/bbs/attachments:/webroot/bbs/attachments
-      - /data/17mma.com/bbs/forumdata:/webroot/bbs/forumdata
+      - /data/17mma.com/center/data:/var/www/center/data
+      - /data/17mma.com/home/attachment:/var/www/home/attachment
+      - /data/17mma.com/home/data:/var/www/home/data
+      - /data/17mma.com/bbs/attachments:/var/www/bbs/attachments
+      - /data/17mma.com/bbs/forumdata:/var/www/bbs/forumdata
     environment:
       - HTTPS_METHOD=noredirect
       - VIRTUAL_HOST=17mma.zixia.net
@@ -46,11 +46,11 @@ services:
     expose:
       - 80
     volumes:
-      - /data/17paoku.com/center/data:/webroot/center/data
-      - /data/17paoku.com/home/attachment:/webroot/home/attachment
-      - /data/17paoku.com/home/data:/webroot/home/data
-      - /data/17paoku.com/bbs/attachments:/webroot/bbs/attachments
-      - /data/17paoku.com/bbs/forumdata:/webroot/bbs/forumdata
+      - /data/17paoku.com/center/data:/var/www/center/data
+      - /data/17paoku.com/home/attachment:/var/www/home/attachment
+      - /data/17paoku.com/home/data:/var/www/home/data
+      - /data/17paoku.com/bbs/attachments:/var/www/bbs/attachments
+      - /data/17paoku.com/bbs/forumdata:/var/www/bbs/forumdata
     environment:
       - HTTPS_METHOD=noredirect
       - VIRTUAL_HOST=17paoku.zixia.net
@@ -65,19 +65,19 @@ services:
     expose:
       - 80
     volumes:
-      - /data/17salsa.com/dl:/webroot/dl
-      - /data/17salsa.com/center/data:/webroot/center/data
-      - /data/17salsa.com/home/attachment:/webroot/home/attachment
-      - /data/17salsa.com/home/data:/webroot/home/data
-      - /data/17salsa.com/site/attachments:/webroot/site/attachments
-      - /data/17salsa.com/site/data:/webroot/site/data
-      - /data/17salsa.com/shop/data:/webroot/shop/data
-      - /data/17salsa.com/shop/images:/webroot/shop/images
-      - /data/17salsa.com/shop/temp:/webroot/shop/temp
-      - /data/17salsa.com/wiki/data:/webroot/wiki/data
-      - /data/17salsa.com/wiki/uploads:/webroot/wiki/uploads
-      - /data/17salsa.com/mall/data:/webroot/mall/data
-      - /data/17salsa.com/mall/temp:/webroot/mall/temp
+      - /data/17salsa.com/dl:/var/www/dl
+      - /data/17salsa.com/center/data:/var/www/center/data
+      - /data/17salsa.com/home/attachment:/var/www/home/attachment
+      - /data/17salsa.com/home/data:/var/www/home/data
+      - /data/17salsa.com/site/attachments:/var/www/site/attachments
+      - /data/17salsa.com/site/data:/var/www/site/data
+      - /data/17salsa.com/shop/data:/var/www/shop/data
+      - /data/17salsa.com/shop/images:/var/www/shop/images
+      - /data/17salsa.com/shop/temp:/var/www/shop/temp
+      - /data/17salsa.com/wiki/data:/var/www/wiki/data
+      - /data/17salsa.com/wiki/uploads:/var/www/wiki/uploads
+      - /data/17salsa.com/mall/data:/var/www/mall/data
+      - /data/17salsa.com/mall/temp:/var/www/mall/temp
     environment:
       - HTTPS_METHOD=noredirect
       - VIRTUAL_HOST=17salsa.com,*.17salsa.com,17salsa.net,*.17salsa.net,17salsa.org,*.17salsa.org
@@ -92,7 +92,7 @@ services:
     expose:
       - 80
     volumes:
-      - /data/ceibsmobi.com/admin/UploadFiles:/webroot/admin/UploadFiles
+      - /data/ceibsmobi.com/admin/UploadFiles:/var/www/admin/UploadFiles
     environment:
       - HTTPS_METHOD=noredirect
       - VIRTUAL_HOST=ceibsmobi.com,www.ceibsmobi.com
