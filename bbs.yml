@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+
+  bbs:
+    image: ghcr.io/zixia/bbs.zixia.net
+    container_name: bbs
+    network_mode: bridge
+    hostname: bbs.zixia.net
+    # ⬇️  https://github.com/docker/compose/issues/4729#issuecomment-436148318
+    ports:
+      - '2222:22'
+      - '2323:23'
+      - '22222:2222'
+    expose:
+      - 80
+    volumes:
+      - /data/bbs/:/bbs
+    environment:
+      - VIRTUAL_HOST=bbs.zixia.net,*.bbs.zixia.net,wforum.zixia.net,*.wforum.zixia.net
+      - LETSENCRYPT_HOST=bbs.zixia.net,wforum.zixia.net
+      - HTTPS_METHOD=noredirect
