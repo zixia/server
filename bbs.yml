@@ -6,7 +6,9 @@ services:
     container_name: bbs
     network_mode: bridge
     hostname: bbs.zixia.net
-    # ⬇️  https://github.com/docker/compose/issues/4729#issuecomment-436148318
+    # ⬇️  
+    #   https://github.com/docker/compose/issues/4729#issuecomment-436148318
+    #   https://medium.com/@junwan01/quote-your-ports-in-docker-compose-file-34d9505999ad
     ports:
       - '2222:22'
       - '2323:23'
