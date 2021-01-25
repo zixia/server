@@ -6,7 +6,16 @@ services:
     container_name: bbs
     network_mode: bridge
     hostname: bbs.zixia.net
+
     # ⬇️  
+    # Enable GDB in container Issue #12
+    #   https://github.com/zixia/bbs.zixia.net/issues/12
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - apparmor:unconfined
+
+    # ⬇️  Fix invalid port specification
     #   https://github.com/docker/compose/issues/4729#issuecomment-436148318
     #   https://medium.com/@junwan01/quote-your-ports-in-docker-compose-file-34d9505999ad
     ports:
