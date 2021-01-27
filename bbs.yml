@@ -28,6 +28,6 @@ services:
       - /data/bbs/:/bbs
     environment:
       TZ: "Asia/Shanghai"
-      VIRTUAL_HOST: 'bbs.zixia.net,*.bbs.zixia.net,wforum.zixia.net,*.wforum.zixia.net'
-      LETSENCRYPT_HOST: 'bbs.zixia.net,wforum.zixia.net'
-      HTTPS_METHOD: 'noredirect'
+      #VIRTUAL_HOST: 'bbs.zixia.net,*.bbs.zixia.net,wforum.zixia.net,*.wforum.zixia.net'
+      #LETSENCRYPT_HOST: 'bbs.zixia.net,wforum.zixia.net'
+      #HTTPS_METHOD: 'noredirect'
